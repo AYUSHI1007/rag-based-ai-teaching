@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Generated data
+videos/
+audios/
+jsons/
+
+# Model outputs
+output.json
+prompt.txt
+response.txt
+embeddings.joblib
+
+# OS files
+.DS_Store
+Thumbs.db
