@@ -1,45 +1,97 @@
-import pandas as pd
-from sklearn.metrics.pairwise import cosine_similarity
-import requests 
-import numpy as np
+import os
+import requests
 import joblib
-def create_embedding(text_list):
-    r=requests.post("http://localhost:11434/api/embed",json={
-        "model":"bge-m3",
-        "input":text_list
-    })
-    embedding=r.json()['embeddings']
-    return embedding
-df=joblib.load("embeddings.joblib")
-def inference(prompt):
-    r=requests.post("http://localhost:11434/api/generate",json={
-        "model":"llama3.2",
-        "prompt":prompt,
-        "stream":False
-    })
-    return r.json()
+import numpy as np
+from sentence_transformers import CrossEncoder
+from rag_strategies import RAGPipeline
 
-incoming_query=input("Ask a question: ")
-query_embedding=create_embedding([incoming_query])[0]
-# print(query_embedding)
-similarities=cosine_similarity(np.vstack(df['embedding'].values),[query_embedding]).flatten()
-max_ind =similarities.argsort()[::-1][0:5]
-# print(max_ind)
-new_df=df.loc[max_ind]
-# print(new_df[['chunk_id','number','text']])
-# for index,item in new_df.iterrows():
-#     print(index,item['number'],item['text'],item['start'],item['end'])
 
-prompt=f'''
-I am teaching Software Engineering / OOAD in this course. Here are video chunks containing video number, start time in seconds, and end time in seconds, the text at that time:
-{new_df[['number','start','end','text']].to_json(orient="records")}
---------------------------------------------------------
-"{incoming_query}"
-User asked this question related to video chunks, you have to answer where and how much content is taught in which video (in which video and at what time) and guide the user to go to that particular video. If user asks unrelated question tell that you can answer only questions related to the course.
-'''
-with open("prompt.txt","w") as f:
-    f.write(prompt)
-response=inference(prompt)["response"]
-print(response)
-with open("response.txt","w") as f:
-    f.write(response)
+def create_embedding(text):
+    response = requests.post(
+        "http://localhost:11434/api/embed",
+        json={"model": "bge-m3", "input": text}
+    )
+    response.raise_for_status()
+    return response.json()["embeddings"][0]
+
+
+def ask_llama(prompt):
+    response = requests.post(
+        "http://localhost:11434/api/generate",
+        json={"model": "llama3.2", "prompt": prompt, "stream": False}
+    )
+    response.raise_for_status()
+    return response.json()["response"]
+
+
+base_dir = os.path.dirname(os.path.abspath(__file__))
+joblib_path = os.path.join(base_dir, "embeddings.joblib")
+df = joblib.load(joblib_path)
+
+chunks = []
+embeddings = []
+for lec, group in df.groupby("number", sort=False):
+    for i, (_, row) in enumerate(group.iterrows()):
+        chunks.append({
+            "id": f"{lec}_{i}",
+            "lecture": str(lec).zfill(2),
+            "text": row["text"],
+            "start": row.get("start", 0),
+            "end": row.get("end", 0)
+        })
+        embeddings.append(row["embedding"])
+
+reranker = CrossEncoder("BAAI/bge-reranker-v2-m3", max_length=512)
+pipeline = RAGPipeline(chunks=chunks, embeddings=embeddings, reranker_model=reranker)
+
+
+def ask_question(question):
+    print("\n" + "=" * 60)
+    print("USER QUESTION:", question)
+    print("=" * 60)
+
+    query_embedding = create_embedding(question)
+    retrieved_ids = pipeline.retrieve_rerank(question, query_embedding, top_k=3)
+
+    retrieved_chunks = [pipeline.chunks[pipeline.id_to_index[cid]] for cid in retrieved_ids]
+
+    context_parts = []
+    for chunk in retrieved_chunks:
+        context_parts.append(
+            f"Lecture: {chunk['lecture']} | Timestamp: {chunk['start']} - {chunk['end']}\nText: {chunk['text']}\n"
+        )
+    context = "\n".join(context_parts)
+
+    prompt = f"""You are an AI teaching assistant answering questions about lecture videos.
+Answer using only the retrieved lecture content below.
+
+QUESTION:
+{question}
+
+RETRIEVED LECTURE CONTENT:
+{context}
+
+INSTRUCTIONS:
+1. Use only the lecture content provided.
+2. If asked WHERE a topic is taught, specify the lecture number and the starting timestamp.
+3. Keep the final answer clear and concise.
+
+ANSWER:"""
+
+    answer = ask_llama(prompt)
+
+    print("\nANSWER:")
+    print(answer)
+    print("=" * 60)
+    return answer
+
+
+if __name__ == "__main__":
+    while True:
+        user_query = input("\nAsk a question (or 'exit'): ")
+        if user_query.lower() == "exit":
+            break
+        try:
+            ask_question(user_query)
+        except Exception as e:
+            print("Error:", e)

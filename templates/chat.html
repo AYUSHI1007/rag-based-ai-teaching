@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CourseGPT</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/6b0b2d4b57.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            🎓 CourseGPT
+
+        </div>
+
+        <button class="new-chat">
+
+            <i class="fa-solid fa-plus"></i>
+
+            New Chat
+
+        </button>
+
+        <div class="history">
+
+            <p>Recent Chats</p>
+
+        </div>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <div class="landing" id="landing">
+
+            <div class="robot">
+
+                🤖
+
+            </div>
+
+            <h1>
+
+                CourseGPT
+
+            </h1>
+
+            <p>
+
+                Your AI Teaching Assistant
+
+            </p>
+
+            <h2>
+
+                What would you like to learn today?
+
+            </h2>
+
+        </div>
+
+        <div class="messages" id="messages">
+
+        </div>
+
+        <div class="input-box">
+
+            <input
+
+                id="question"
+
+                type="text"
+
+                placeholder="Ask anything about your lectures..."
+
+            >
+
+            <button id="sendBtn">
+
+                <i class="fa-solid fa-arrow-up"></i>
+
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', path='js/chat.js') }}"></script>
+
+</body>
+
+</html>

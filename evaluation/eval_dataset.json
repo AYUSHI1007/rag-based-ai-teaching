@@ -1,0 +1,894 @@
+[
+  {
+    "id": 1,
+    "lecture": "01",
+    "question": "Why is merely using an object-oriented programming language not sufficient for building complex software?",
+    "expected_chunk_ids": [
+      "01_7",
+      "01_10",
+      "01_27",
+      "01_8"
+    ],
+    "ground_truth_answer": "Merely using an OOP language like C++ or Java is not enough because writing clean syntax does not guarantee good design, proper problem domain analysis, or correct system architecture.",
+    "keywords": [
+      "object oriented programming language",
+      "complex software",
+      "analysis",
+      "design"
+    ]
+  },
+  {
+    "id": 2,
+    "lecture": "01",
+    "question": "What is the primary motivation for studying Object Oriented Analysis and Design (OOAD)?",
+    "expected_chunk_ids": [
+      "01_24",
+      "01_2",
+      "01_0",
+      "01_184"
+    ],
+    "ground_truth_answer": "The motivation is to understand how to analyze real-life problems and effectively design complex software systems that are reliable, maintainable, and delivered within budget and schedule.",
+    "keywords": [
+      "motivation",
+      "analysis of real life problems",
+      "complex software"
+    ]
+  },
+  {
+    "id": 3,
+    "lecture": "01",
+    "question": "How does software engineering differ from traditional engineering disciplines regarding project success?",
+    "expected_chunk_ids": [
+      "01_32",
+      "01_40",
+      "01_222",
+      "01_41",
+      "01_38"
+    ],
+    "ground_truth_answer": "Software development is still at a nascent stage compared to traditional engineering, often struggling with budget overruns, delayed delivery, and lack of guaranteed construction success.",
+    "keywords": [
+      "traditional engineering",
+      "budget",
+      "timely completion",
+      "construction"
+    ]
+  },
+  {
+    "id": 4,
+    "lecture": "02",
+    "question": "What are the primary elements that contribute to the complexity of software systems?",
+    "expected_chunk_ids": [
+      "02_151",
+      "02_6",
+      "02_200",
+      "02_79",
+      "02_88",
+      "02_92"
+    ],
+    "ground_truth_answer": "The complexity arises from the complexity of the problem domain, difficulty of managing the development process, flexibility afforded through software, and discrete state transitions.",
+    "keywords": [
+      "complexity",
+      "problem domain",
+      "development process",
+      "discrete state"
+    ]
+  },
+  {
+    "id": 5,
+    "lecture": "02",
+    "question": "What defines industrial-strength software compared to amateur or toy software?",
+    "expected_chunk_ids": [
+      "02_16",
+      "02_50",
+      "02_66",
+      "02_49",
+      "02_79"
+    ],
+    "ground_truth_answer": "Industrial strength software is large-scale, complex, resource-constrained, developed by teams of people, maintained over long lifecycles, and has high cost of failure.",
+    "keywords": [
+      "industrial strength",
+      "complex",
+      "resource constraint",
+      "lifecycle"
+    ]
+  },
+  {
+    "id": 6,
+    "lecture": "02",
+    "question": "Why does discrete state behavior make software inherently complex to test?",
+    "expected_chunk_ids": [
+      "02_79",
+      "02_222",
+      "02_6",
+      "02_216",
+      "02_87",
+      "02_91"
+    ],
+    "ground_truth_answer": "Unlike continuous physical systems where small input changes produce small output changes, software has combinatorial discrete states where a single-bit flip can cause catastrophic state corruption.",
+    "keywords": [
+      "discrete state",
+      "continuous",
+      "transitions",
+      "testing"
+    ]
+  },
+  {
+    "id": 7,
+    "lecture": "03",
+    "question": "What is the communication gap between users and software developers?",
+    "expected_chunk_ids": [
+      "03_7",
+      "03_77",
+      "03_12"
+    ],
+    "ground_truth_answer": "Users understand their domain problems but do not understand software architecture, while developers understand software constructs but not the nuances of the user domain.",
+    "keywords": [
+      "communication gap",
+      "developer",
+      "user",
+      "problem domain"
+    ]
+  },
+  {
+    "id": 8,
+    "lecture": "03",
+    "question": "How do non-functional requirements contribute to system complexity?",
+    "expected_chunk_ids": [
+      "03_7",
+      "03_81",
+      "03_72",
+      "03_6"
+    ],
+    "ground_truth_answer": "Non-functional requirements such as performance, security, scalability, reliability, and response latency impose strict architectural constraints on top of functional behavior.",
+    "keywords": [
+      "non-functional requirements",
+      "performance",
+      "security",
+      "complexity"
+    ]
+  },
+  {
+    "id": 9,
+    "lecture": "04",
+    "question": "What are the five essential attributes of a complex system?",
+    "expected_chunk_ids": [
+      "04_266",
+      "04_283",
+      "04_247",
+      "04_14"
+    ],
+    "ground_truth_answer": "Hierarchical structure, relative primitives, separation of concerns, common recurring patterns, and stable intermediate forms.",
+    "keywords": [
+      "five attributes",
+      "hierarchical",
+      "relative primitives",
+      "separation of concerns",
+      "stable intermediate forms"
+    ]
+  },
+  {
+    "id": 10,
+    "lecture": "04",
+    "question": "What does the concept of relative primitives mean in complex systems?",
+    "expected_chunk_ids": [
+      "04_268",
+      "04_9",
+      "04_251",
+      "04_266"
+    ],
+    "ground_truth_answer": "What is considered a primitive component at one level of abstraction may itself be a complex composition of smaller components at a lower level of abstraction.",
+    "keywords": [
+      "relative primitives",
+      "primitive",
+      "abstraction level",
+      "components"
+    ]
+  },
+  {
+    "id": 11,
+    "lecture": "04",
+    "question": "Why are stable intermediate forms critical during complex system evolution?",
+    "expected_chunk_ids": [
+      "04_273",
+      "04_272",
+      "04_261"
+    ],
+    "ground_truth_answer": "Complex systems evolve much more rapidly and reliably if they are built from stable, working subsystems that serve as intermediate milestones.",
+    "keywords": [
+      "stable intermediate forms",
+      "evolution",
+      "subsystems",
+      "milestones"
+    ]
+  },
+  {
+    "id": 12,
+    "lecture": "05",
+    "question": "What is the canonical form of a complex system?",
+    "expected_chunk_ids": [
+      "05_104",
+      "05_1",
+      "05_101",
+      "05_73"
+    ],
+    "ground_truth_answer": "The canonical form represents a system through two orthogonal hierarchies: the class structure (is-a / generalization) and the object structure (part-of / aggregation).",
+    "keywords": [
+      "canonical form",
+      "class structure",
+      "object structure",
+      "orthogonal"
+    ]
+  },
+  {
+    "id": 13,
+    "lecture": "05",
+    "question": "How do class structure and object structure differ in the canonical view?",
+    "expected_chunk_ids": [
+      "05_5",
+      "05_6",
+      "05_7"
+    ],
+    "ground_truth_answer": "Class structure highlights common properties, behavior, and inheritance relationships, whereas object structure highlights runtime collaboration, communication, and containment.",
+    "keywords": [
+      "class structure",
+      "object structure",
+      "runtime",
+      "collaboration",
+      "inheritance"
+    ]
+  },
+  {
+    "id": 14,
+    "lecture": "05",
+    "question": "Why is the canonical form described as having orthogonal dimensions?",
+    "expected_chunk_ids": [
+      "05_8",
+      "05_9",
+      "05_10"
+    ],
+    "ground_truth_answer": "Because the class hierarchy and object composition hierarchy provide independent yet complementary views of the same underlying architecture.",
+    "keywords": [
+      "orthogonal",
+      "dimensions",
+      "class hierarchy",
+      "object composition"
+    ]
+  },
+  {
+    "id": 15,
+    "lecture": "06",
+    "question": "What is Miller's Law regarding human cognitive capacity?",
+    "expected_chunk_ids": [
+      "06_156",
+      "06_159",
+      "06_169",
+      "06_178",
+      "06_23"
+    ],
+    "ground_truth_answer": "Miller's Law states that human short-term memory can simultaneously process approximately 7 plus or minus 2 chunks of information at any given time.",
+    "keywords": [
+      "Miller",
+      "cognitive capacity",
+      "short term memory",
+      "7 plus minus 2"
+    ]
+  },
+  {
+    "id": 16,
+    "lecture": "06",
+    "question": "How does chunking help humans overcome cognitive limitations?",
+    "expected_chunk_ids": [
+      "06_148",
+      "06_169",
+      "06_154",
+      "06_102",
+      "06_182"
+    ],
+    "ground_truth_answer": "Chunking groups related pieces of lower-level information into a single meaningful unit, reducing cognitive overload and increasing semantic content per chunk.",
+    "keywords": [
+      "chunking",
+      "cognitive overload",
+      "semantic load",
+      "meaningful pieces"
+    ]
+  },
+  {
+    "id": 17,
+    "lecture": "06",
+    "question": "How does abstraction act as a tool against disorganized complexity?",
+    "expected_chunk_ids": [
+      "06_36",
+      "06_28",
+      "06_102",
+      "06_20"
+    ],
+    "ground_truth_answer": "Abstraction allows designers to focus only on essential attributes of interest while intentionally ignoring irrelevant implementation details.",
+    "keywords": [
+      "abstraction",
+      "disorganized complexity",
+      "essential attributes",
+      "details"
+    ]
+  },
+  {
+    "id": 18,
+    "lecture": "07",
+    "question": "What is algorithmic decomposition and what is its main focus?",
+    "expected_chunk_ids": [
+      "07_131",
+      "07_37",
+      "07_39",
+      "07_38",
+      "07_28"
+    ],
+    "ground_truth_answer": "Algorithmic decomposition breaks down a system by ordering of events, functional steps, and subroutines using a top-down structured approach.",
+    "keywords": [
+      "algorithmic decomposition",
+      "ordering of events",
+      "functional",
+      "top-down"
+    ]
+  },
+  {
+    "id": 19,
+    "lecture": "07",
+    "question": "How does object-oriented decomposition fundamentally differ from algorithmic decomposition?",
+    "expected_chunk_ids": [
+      "07_131",
+      "07_108",
+      "07_83",
+      "07_28"
+    ],
+    "ground_truth_answer": "OO decomposition views the system as autonomous cooperating agents (objects) exchanging messages, rather than a sequential pipeline of algorithm steps.",
+    "keywords": [
+      "object oriented decomposition",
+      "autonomous agents",
+      "messages",
+      "cooperating"
+    ]
+  },
+  {
+    "id": 20,
+    "lecture": "08",
+    "question": "Why are systems built with object-oriented decomposition more resilient to change than algorithmic systems?",
+    "expected_chunk_ids": [
+      "08_42",
+      "08_45",
+      "08_43",
+      "08_46"
+    ],
+    "ground_truth_answer": "OO systems evolve through stable intermediate forms and separation of concerns, localizing changes within objects and minimizing ripple effects across the system.",
+    "keywords": [
+      "resilience",
+      "stable intermediate forms",
+      "separation of concerns",
+      "ripple effect"
+    ]
+  },
+  {
+    "id": 21,
+    "lecture": "08",
+    "question": "What is the meaning of separation of concerns in subsystem design?",
+    "expected_chunk_ids": [
+      "08_62",
+      "08_57",
+      "08_1",
+      "08_56"
+    ],
+    "ground_truth_answer": "Subsystems have high intra-system activity (strong internal cohesion) and low inter-system activity (loose coupling via messages across boundaries).",
+    "keywords": [
+      "separation of concerns",
+      "intra system",
+      "inter system",
+      "loose coupling"
+    ]
+  },
+  {
+    "id": 22,
+    "lecture": "08",
+    "question": "What five factors define a workable engineering design according to Lecture 08?",
+    "expected_chunk_ids": [
+      "08_139",
+      "08_120",
+      "08_104",
+      "08_141",
+      "08_31",
+      "08_100"
+    ],
+    "ground_truth_answer": "Functional specification, conformity to target medium limitations, performance and resource requirements, tolerance of artifacts, and constraints on the design process itself.",
+    "keywords": [
+      "functional specification",
+      "target medium",
+      "performance",
+      "artifacts",
+      "design process constraints"
+    ]
+  },
+  {
+    "id": 23,
+    "lecture": "09",
+    "question": "What historical programming models preceded the object-oriented paradigm?",
+    "expected_chunk_ids": [
+      "09_205",
+      "09_212",
+      "09_47",
+      "09_24"
+    ],
+    "ground_truth_answer": "Monolithic programming, procedural/structured programming (subroutines), and modular programming (data encapsulation in modules).",
+    "keywords": [
+      "programming models",
+      "procedural",
+      "modular",
+      "monolithic"
+    ]
+  },
+  {
+    "id": 24,
+    "lecture": "09",
+    "question": "What was the main weakness of pure procedural programming for large applications?",
+    "expected_chunk_ids": [
+      "09_107",
+      "09_141",
+      "09_131",
+      "09_217",
+      "09_113",
+      "09_203"
+    ],
+    "ground_truth_answer": "Global data accessibility and tight coupling between subroutines and shared data structures caused uncontrollable side effects when data formats changed.",
+    "keywords": [
+      "procedural programming",
+      "global data",
+      "side effects",
+      "coupling"
+    ]
+  },
+  {
+    "id": 25,
+    "lecture": "10",
+    "question": "What are the four major foundation elements of the Object Model?",
+    "expected_chunk_ids": [
+      "10_9",
+      "10_6",
+      "10_16"
+    ],
+    "ground_truth_answer": "Abstraction, Encapsulation, Modularity, and Hierarchy.",
+    "keywords": [
+      "four major foundations",
+      "abstraction",
+      "encapsulation",
+      "modularity",
+      "hierarchy"
+    ]
+  },
+  {
+    "id": 26,
+    "lecture": "10",
+    "question": "Why are the four foundation elements described as 'major' in the Object Model?",
+    "expected_chunk_ids": [
+      "10_9",
+      "10_6",
+      "10_16"
+    ],
+    "ground_truth_answer": "Because a model without any one of these four elements cannot be considered truly object-oriented; they are strictly required core principles.",
+    "keywords": [
+      "major elements",
+      "foundations",
+      "object model",
+      "core principles"
+    ]
+  },
+  {
+    "id": 27,
+    "lecture": "11",
+    "question": "How is abstraction formally defined in the context of OOAD?",
+    "expected_chunk_ids": [
+      "11_10",
+      "11_104",
+      "11_15"
+    ],
+    "ground_truth_answer": "Abstraction denotes the essential characteristics of an object that distinguish it from all other kinds of objects and provide crisply defined conceptual boundaries relative to the perspective of the viewer.",
+    "keywords": [
+      "abstraction",
+      "essential characteristics",
+      "conceptual boundaries",
+      "viewer perspective"
+    ]
+  },
+  {
+    "id": 28,
+    "lecture": "11",
+    "question": "What is an entity abstraction versus an action abstraction?",
+    "expected_chunk_ids": [
+      "11_4",
+      "11_5",
+      "11_6"
+    ],
+    "ground_truth_answer": "An entity abstraction represents a useful model of a real-world object or domain concept, whereas an action abstraction represents an object that encapsulates a single operation or generalized procedure.",
+    "keywords": [
+      "entity abstraction",
+      "action abstraction",
+      "real-world object",
+      "operation"
+    ]
+  },
+  {
+    "id": 29,
+    "lecture": "11",
+    "question": "What is a contract in client-server abstraction?",
+    "expected_chunk_ids": [
+      "11_141"
+    ],
+    "ground_truth_answer": "A contract is the agreed-upon interface of obligations, responsibilities, and expected behaviors that a server object guarantees to provide to client objects.",
+    "keywords": [
+      "contract",
+      "client server",
+      "responsibilities",
+      "interface"
+    ]
+  },
+  {
+    "id": 30,
+    "lecture": "12",
+    "question": "What is encapsulation and how does it relate to information hiding?",
+    "expected_chunk_ids": [
+      "12_243",
+      "12_230",
+      "12_228"
+    ],
+    "ground_truth_answer": "Encapsulation is the process of binding data and the methods that operate on it, hiding internal structural details behind a clean public interface (barrier abstraction).",
+    "keywords": [
+      "encapsulation",
+      "information hiding",
+      "barrier abstraction",
+      "interface"
+    ]
+  },
+  {
+    "id": 31,
+    "lecture": "12",
+    "question": "How do encapsulation and abstraction complement each other?",
+    "expected_chunk_ids": [
+      "12_204",
+      "12_110",
+      "12_24"
+    ],
+    "ground_truth_answer": "Abstraction focuses on the observable external behavior of an object, whereas encapsulation focuses on the concealment of the internal implementation that produces that behavior.",
+    "keywords": [
+      "abstraction",
+      "encapsulation",
+      "observable behavior",
+      "implementation hiding"
+    ]
+  },
+  {
+    "id": 32,
+    "lecture": "12",
+    "question": "What is the relationship between high cohesion and low coupling?",
+    "expected_chunk_ids": [
+      "12_124",
+      "12_68",
+      "12_62"
+    ],
+    "ground_truth_answer": "High cohesion ensures elements inside a module or class belong closely together, while low coupling ensures minimal dependencies between different modules.",
+    "keywords": [
+      "high cohesion",
+      "low coupling",
+      "dependencies",
+      "modular"
+    ]
+  },
+  {
+    "id": 33,
+    "lecture": "13",
+    "question": "What is modularity in object-oriented software architecture?",
+    "expected_chunk_ids": [
+      "13_1",
+      "13_2",
+      "13_3"
+    ],
+    "ground_truth_answer": "Modularity is the property of a system that has been decomposed into a set of cohesive and loosely coupled physical compilation units or packages.",
+    "keywords": [
+      "modularity",
+      "compilation units",
+      "packages",
+      "loosely coupled"
+    ]
+  },
+  {
+    "id": 34,
+    "lecture": "13",
+    "question": "How do excessive modularity and insufficient modularity trade off?",
+    "expected_chunk_ids": [
+      "13_4",
+      "13_5",
+      "13_6"
+    ],
+    "ground_truth_answer": "Insufficient modularity creates unmaintainable monolithic files, while excessive modularity increases inter-module communication overhead and compilation complexity.",
+    "keywords": [
+      "excessive modularity",
+      "overhead",
+      "trade off",
+      "compilation"
+    ]
+  },
+  {
+    "id": 35,
+    "lecture": "14",
+    "question": "What is hierarchy in the Object Model and what are its two primary forms?",
+    "expected_chunk_ids": [
+      "14_13",
+      "14_255",
+      "14_170"
+    ],
+    "ground_truth_answer": "Hierarchy is a ranking or ordering of abstractions, manifested as inheritance (is-a hierarchy) and aggregation (part-of hierarchy).",
+    "keywords": [
+      "hierarchy",
+      "inheritance",
+      "aggregation",
+      "is-a",
+      "part-of"
+    ]
+  },
+  {
+    "id": 36,
+    "lecture": "14",
+    "question": "What is the difference between single inheritance and multiple inheritance?",
+    "expected_chunk_ids": [
+      "14_4",
+      "14_5",
+      "14_6"
+    ],
+    "ground_truth_answer": "Single inheritance allows a subclass to inherit from exactly one superclass, whereas multiple inheritance allows a subclass to derive characteristics from more than one superclass.",
+    "keywords": [
+      "single inheritance",
+      "multiple inheritance",
+      "subclass",
+      "superclass"
+    ]
+  },
+  {
+    "id": 37,
+    "lecture": "14",
+    "question": "What is the diamond problem in multiple inheritance?",
+    "expected_chunk_ids": [
+      "14_7",
+      "14_8",
+      "14_9"
+    ],
+    "ground_truth_answer": "The diamond problem occurs when a class inherits from two intermediate classes that both inherit from a single base class, causing ambiguity regarding which base class member is inherited.",
+    "keywords": [
+      "diamond problem",
+      "multiple inheritance",
+      "ambiguity",
+      "base class"
+    ]
+  },
+  {
+    "id": 38,
+    "lecture": "15",
+    "question": "What are the minor foundation elements of the Object Model?",
+    "expected_chunk_ids": [
+      "15_199",
+      "15_1"
+    ],
+    "ground_truth_answer": "Typing, Concurrency, and Persistence.",
+    "keywords": [
+      "minor foundations",
+      "typing",
+      "concurrency",
+      "persistence"
+    ]
+  },
+  {
+    "id": 39,
+    "lecture": "15",
+    "question": "What is the difference between strong typing and weak typing in programming languages?",
+    "expected_chunk_ids": [
+      "15_4",
+      "15_5",
+      "15_6"
+    ],
+    "ground_truth_answer": "Strong typing strictly prevents operations on incompatible types without explicit conversion, while weak typing allows implicit type conversions and coercion.",
+    "keywords": [
+      "strong typing",
+      "weak typing",
+      "conversion",
+      "type safety"
+    ]
+  },
+  {
+    "id": 40,
+    "lecture": "15",
+    "question": "How do active objects differ from passive objects under concurrency?",
+    "expected_chunk_ids": [
+      "15_7",
+      "15_8",
+      "15_9"
+    ],
+    "ground_truth_answer": "Active objects encompass their own independent thread of control and execute autonomously, while passive objects only execute when invoked by an external thread.",
+    "keywords": [
+      "active objects",
+      "passive objects",
+      "thread of control",
+      "concurrency"
+    ]
+  },
+  {
+    "id": 41,
+    "lecture": "16",
+    "question": "What three core characteristics define the nature of an object?",
+    "expected_chunk_ids": [
+      "16_27",
+      "16_261",
+      "16_82"
+    ],
+    "ground_truth_answer": "State, Behavior, and Identity.",
+    "keywords": [
+      "nature of an object",
+      "state",
+      "behavior",
+      "identity"
+    ]
+  },
+  {
+    "id": 42,
+    "lecture": "16",
+    "question": "How does an object differ from a class?",
+    "expected_chunk_ids": [
+      "16_251",
+      "16_29",
+      "16_28"
+    ],
+    "ground_truth_answer": "A class is an abstract blueprint or type defining common properties and methods, while an object is a concrete, runtime instance with specific state and distinct identity.",
+    "keywords": [
+      "object",
+      "class",
+      "blueprint",
+      "runtime instance"
+    ]
+  },
+  {
+    "id": 43,
+    "lecture": "17",
+    "question": "What constitutes the state of an object?",
+    "expected_chunk_ids": [
+      "17_1",
+      "17_2",
+      "17_3"
+    ],
+    "ground_truth_answer": "The state of an object encompasses all of its static properties (attributes) plus the current dynamic values of each of these properties.",
+    "keywords": [
+      "state",
+      "static properties",
+      "dynamic values",
+      "attributes"
+    ]
+  },
+  {
+    "id": 44,
+    "lecture": "17",
+    "question": "What is a state transition in object lifecycle?",
+    "expected_chunk_ids": [
+      "17_84"
+    ],
+    "ground_truth_answer": "A state transition is a change in one or more attribute values of an object triggered by receiving a message or operation invocation.",
+    "keywords": [
+      "state transition",
+      "lifecycle",
+      "message",
+      "attribute values"
+    ]
+  },
+  {
+    "id": 45,
+    "lecture": "18",
+    "question": "What is the behavior of an object and how is it exhibited?",
+    "expected_chunk_ids": [
+      "18_45",
+      "18_38",
+      "18_46",
+      "18_169",
+      "18_39"
+    ],
+    "ground_truth_answer": "Behavior is how an object acts and reacts in terms of state changes and message passing, exhibited through operations it performs.",
+    "keywords": [
+      "behavior",
+      "acts and reacts",
+      "operations",
+      "message passing"
+    ]
+  },
+  {
+    "id": 46,
+    "lecture": "18",
+    "question": "What are the common types of operations performed by an object: modifier, selector, and iterator?",
+    "expected_chunk_ids": [
+      "18_38",
+      "18_45"
+    ],
+    "ground_truth_answer": "Modifiers alter an object's state; selectors access state without modifying it; iterators allow accessing parts of an aggregate object in a specified sequence.",
+    "keywords": [
+      "modifier",
+      "selector",
+      "iterator",
+      "operations"
+    ]
+  },
+  {
+    "id": 47,
+    "lecture": "19",
+    "question": "What is the fundamental difference between object identity and object equality?",
+    "expected_chunk_ids": [
+      "19_195",
+      "19_112",
+      "19_185",
+      "19_153",
+      "19_145",
+      "19_166"
+    ],
+    "ground_truth_answer": "Identity is the property of an object that distinguishes it from all other objects regardless of state (e.g. memory address), whereas equality means two distinct objects have identical state values.",
+    "keywords": [
+      "identity",
+      "equality",
+      "state values",
+      "memory address"
+    ]
+  },
+  {
+    "id": 48,
+    "lecture": "19",
+    "question": "What is the difference between a shallow copy and a deep copy of an object?",
+    "expected_chunk_ids": [
+      "19_130",
+      "19_45",
+      "19_204",
+      "19_6"
+    ],
+    "ground_truth_answer": "A shallow copy duplicates the immediate object structure while copying references to referenced objects, whereas a deep copy recursively clones all referenced child objects.",
+    "keywords": [
+      "shallow copy",
+      "deep copy",
+      "references",
+      "clone"
+    ]
+  },
+  {
+    "id": 49,
+    "lecture": "20",
+    "question": "What is the difference between aggregation and composition in object relationships?",
+    "expected_chunk_ids": [
+      "20_13",
+      "20_23",
+      "20_25",
+      "20_10"
+    ],
+    "ground_truth_answer": "Aggregation represents a weak whole-part relationship where child parts can exist independently, while composition represents a strong ownership relationship where child parts cannot survive without the parent.",
+    "keywords": [
+      "aggregation",
+      "composition",
+      "whole-part",
+      "ownership",
+      "lifecycle"
+    ]
+  },
+  {
+    "id": 50,
+    "lecture": "20",
+    "question": "How does dependency relationship differ from association in class diagrams?",
+    "expected_chunk_ids": [
+      "20_99",
+      "20_22",
+      "20_35",
+      "20_201",
+      "20_107",
+      "20_7"
+    ],
+    "ground_truth_answer": "Association represents a structural link where one object maintains a persistent reference to another, whereas dependency represents a transient 'uses' relationship (such as a method parameter or local variable).",
+    "keywords": [
+      "dependency",
+      "association",
+      "structural link",
+      "transient"
+    ]
+  }
+]
