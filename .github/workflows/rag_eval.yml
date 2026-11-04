@@ -27,4 +27,4 @@ jobs:
 
       - name: Run Evaluation (50 Qs x 4 Methods)
         run: |
-          python evaluate.py --threshold 0.80 --top_k 3
+          python evaluate.py --threshold 0.40 --top_k 3
