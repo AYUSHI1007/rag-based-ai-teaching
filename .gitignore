@@ -14,7 +14,6 @@ jsons/
 output.json
 prompt.txt
 response.txt
-embeddings.joblib
 
 # OS files
 .DS_Store
